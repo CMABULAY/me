@@ -19,19 +19,16 @@
                 <v-btn depressed text color="blue" small style="text-transform: none;">Contact </v-btn>
                 <v-spacer></v-spacer>
             </v-toolbar> 
-             
-            <V-card-text style="  height: 400px;" >
+            <v-card> 
               <v-row>
-                <v-col xl="4">
-                  <v-card-text elevation="2">
-                  <v-img  contain  :aspect-ratio="7/5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true"></v-img>
-                </v-card-text>
+                <v-col xl="6" lg="6" cols='12' > 
+                  <v-img  contain elevation="2" style=" filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); " :aspect-ratio="9/5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true"></v-img>
                 </v-col>
-                <v-col>
-
+                <v-col  xl="6" lg="6" cols="12">
+                  <v-card class="mx-auto" flat > Create </v-card>
                 </v-col>
-              </v-row>
-            </V-card-text>
+              </v-row> 
+            </v-card>
  
       </v-main>
     </v-app>     
