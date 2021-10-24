@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-</head> 
+</head>
+
 <body>
-  <div id="app">  
-    <v-app >
-      <v-main style="background-color: rgb(255, 255, 255);" > 
-        <v-img src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">
-          
+  <div id="app">
+    <v-app>
+      <v-main style="background-color: rgb(255, 255, 255);">
+        <v-img :aspect-ratio="5/2.5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">
+
           <br>
-            <v-toolbar  height="40" elevation="0">
-                <v-spacer></v-spacer>
-                <v-btn depressed text color="#58d6c3" small style="text-transform: none;"  href="/about/cv.html" >  Home </v-btn>
-                <v-btn depressed text color="#58d6c3" small style="text-transform: none;">About</v-btn>
-                <v-btn depressed text color="#58d6c3" small style="text-transform: none;">Portfolio</v-btn>
-                <v-btn depressed text color="#58d6c3" small style="text-transform: none;">Contact </v-btn> 
-            </v-toolbar> 
-            <v-card-text>   
-                <v-card class="transparent mx-auto" width="700" flat>
-                  <v-row> 
-                    <v-col>
-                  <v-img   
-                    contain  
-                    style="  background: #ffffff; border-radius: 12px 20px 200px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); " 
-                    :aspect-ratio="7/5"  >
-                    <v-img   
-                    contain rounded
-                    style="  background: #388f82; border-radius: 15px 20px 220px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); " 
-                    :aspect-ratio="4/5" 
-                    src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true"> </v-img>
+          <v-toolbar height="40" elevation="0">
+            <v-spacer></v-spacer>
+            <v-btn depressed text color="#58d6c3" small style="text-transform: none;" href="/index.html"> Home </v-btn>
+            <v-btn depressed text color="#58d6c3" small style="text-transform: none;" href="/about">About</v-btn>
+            <v-btn depressed text color="#58d6c3" small style="text-transform: none;">Portfolio</v-btn>
+            <v-btn depressed text color="#58d6c3" small style="text-transform: none;">Contact </v-btn>
+          </v-toolbar>
+          <v-card-text>
+            <v-card class="transparent mx-auto" width="700" height="900" flat>
+              <v-row>
+                <v-col>
+                  <v-img contain
+                    style="  background: #ffffff; border-radius: 12px 20px 200px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
+                    :aspect-ratio="7/5">
+                    <v-img contain rounded
+                      style="  background: #388f82; border-radius: 15px 20px 220px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
+                      :aspect-ratio="4/5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true">
+                    </v-img>
                   </v-img>
                 </v-col>
-                <v-col  xl="6" lg="6" cols="12">
-                  <v-card-text class="p-4"    height="400"   > 
-                    <span   style="font-size: 30px; font-family: Georgia, serif;">Hi, I'm Cyrus</span><br>
-                    <span> Software Engineer</span>
-                     
-                  </v-card-text>
+                <v-col xl="6" lg="6" cols="12">
+                  <v-row>
+                    <v-col>
+                      <v-card-text class="p-4" height="400">
+                        <span style="font-size: 30px; font-family: Georgia, serif;">Hi, I'm Cyrus</span><br>
+                        <span> <v-icon>mdi-dots-vertical</v-icon> Software Engineer <v-icon size="13" color="primary">mdi-checkbox-multiple-marked</v-icon></span> 
+                      </v-card-text>
+                    </v-col> 
+                  </v-row>
+                  <span>  <v-icon size="23"  > mdi-bio</v-icon></span> 
+                  <hr>
+                  <v-row>
+                    <v-col>
+                      <v-card-text class="p-4" height="400"> 
+                        <span> I am 100% Filipino, residing here in the Philippines, 
+                          Having 6+ years work expirience in a private insurance corporation, Creates fast, usefull and easy to use in-house/office applications for these productions. 
+                        </span> 
+                      </v-card-text>
+                    </v-col> 
+                  </v-row>
                 </v-col>
-              </v-row> 
-              </v-card>  
-          </v-card-text> 
-          
+              </v-row>
+              <v-row><v-col> 
+                  <v-icon size="50">mdi-dots-vertical</v-icon>  
+                 <a download="https://github.com/CMABULAY/me/blob/main/docs/assets/Cyrus.docx"><v-btn color="info" small text><v-icon size="22">mdi-download</v-icon> Download CV</v-btn></a> 
+              </v-col></v-row>
+             
+            </v-card>
+          </v-card-text>
+
         </v-img>
       </v-main>
-    </v-app>     
+    </v-app>
   </div>
 
 
@@ -61,4 +80,5 @@
     })
   </script>
 </body>
+
 </html>
