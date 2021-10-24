@@ -8,28 +8,45 @@
 </head> 
 <body>
   <div id="app">  
-    <v-app>
-      <v-main> 
+    <v-app >
+      <v-main style="background-color: rgb(255, 255, 255);" > 
+        <v-img src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">
+          
           <br>
-            <v-toolbar height="40" elevation="1">
+            <v-toolbar  height="40" elevation="0">
                 <v-spacer></v-spacer>
-                <v-btn depressed text href="/about/cv.html" color="blue" small style="text-transform: none;">  Home </v-btn>
-                <v-btn depressed text color="blue" small style="text-transform: none;">About</v-btn>
-                <v-btn depressed text color="blue" small style="text-transform: none;">Portfolio</v-btn>
-                <v-btn depressed text color="blue" small style="text-transform: none;">Contact </v-btn>
-                <v-spacer></v-spacer>
+                <v-btn depressed text color="#58d6c3" small style="text-transform: none;"  href="/about/cv.html" >  Home </v-btn>
+                <v-btn depressed text color="#58d6c3" small style="text-transform: none;">About</v-btn>
+                <v-btn depressed text color="#58d6c3" small style="text-transform: none;">Portfolio</v-btn>
+                <v-btn depressed text color="#58d6c3" small style="text-transform: none;">Contact </v-btn> 
             </v-toolbar> 
-            <v-card> 
-              <v-row>
-                <v-col xl="6" lg="6" cols='12' > 
-                  <v-img  contain elevation="2" style=" filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); " :aspect-ratio="9/5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true"></v-img>
+            <v-card-text>   
+                <v-card class="transparent mx-auto" width="700" flat>
+                  <v-row> 
+                    <v-col>
+                  <v-img   
+                    contain  
+                    style="  background: #ffffff; border-radius: 12px 20px 200px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); " 
+                    :aspect-ratio="7/5"  >
+                    <v-img   
+                    contain rounded
+                    style="  background: #388f82; border-radius: 15px 20px 220px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); " 
+                    :aspect-ratio="4/5" 
+                    src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true"> </v-img>
+                  </v-img>
                 </v-col>
                 <v-col  xl="6" lg="6" cols="12">
-                  <v-card class="mx-auto" flat > Create </v-card>
+                  <v-card-text class="p-4"    height="400"   > 
+                    <span   style="font-size: 30px; font-family: Georgia, serif;">Hi, I'm Cyrus</span><br>
+                    <span> Software Engineer</span>
+                     
+                  </v-card-text>
                 </v-col>
               </v-row> 
-            </v-card>
- 
+              </v-card>  
+          </v-card-text> 
+          
+        </v-img>
       </v-main>
     </v-app>     
   </div>
