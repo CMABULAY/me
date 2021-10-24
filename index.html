@@ -5,7 +5,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-</head>
+</head> 
 <body>
   <div id="app">  
     <v-app>
@@ -21,11 +21,20 @@
             </v-toolbar> 
              
             <V-card-text style="  height: 400px;" >
-                <v-img width="400" contain src="docs/assets/cy.jpg" ></v-img>
+              <v-row>
+                <v-col xl="4">
+                  <v-card-text elevation="2">
+                  <v-img  contain  :aspect-ratio="7/5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true"></v-img>
+                </v-card-text>
+                </v-col>
+                <v-col>
+
+                </v-col>
+              </v-row>
             </V-card-text>
  
       </v-main>
-    </v-app>
+    </v-app>     
   </div>
 
 
