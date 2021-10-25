@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+  <div id="app">
+   
+    <v-app> 
+      <v-overlay :value="overlay">
+        <v-progress-circular
+          indeterminate
+          size="64"
+        ></v-progress-circular>
+      </v-overlay>
+ 
+      <v-main  >
+        <v-img eager :aspect-ratio="5/2.5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">  
+          <v-card-actions class="grey darken-2 p-4"   elevation="0">
+            <v-spacer></v-spacer>
+            <v-btn depressed text color="#58d6c3" small href="/index.html">  Home </v-btn>
+            <v-btn depressed text color="#58d6c3" small href="/pages/contact/index.html">Contact</v-btn>
+            <v-btn depressed text color="#58d6c3" small href="/pages/portfolio/index.html">Portfolio</v-btn> 
+          </v-card-actions>
+          <v-card-text>
+            <v-card class="transparent mx-auto" width="1100"  height="900" flat>
+              <v-row>
+                <v-col xl="4" lg="4" cols="12"> 
+                  <v-img contain eager
+                    style="  background: #ffffff; border-radius: 12px 20px 200px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
+                    :aspect-ratio="3/5">
+                    <v-icon size="50">mdi-dots-vertical</v-icon>   
+
+                    <v-img contain rounded
+                      style="  background: #388f82; border-radius: 15px 20px 220px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
+                      :aspect-ratio="6/5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true">
+                    </v-img>
+
+                    <v-card-text class="p-4" height="400"  style="font-size: 17px; font-family: Georgia, serif;">
+                      <span style="font-size: 30px;">Cyrus Mabulay</span><hr>
+                      <span><small>Nick name: Cy<br>   
+                            Age: 26<br>   
+                            Citizenship: 	Filipino<br> 
+                            Religion:	Born Again Christian <br> 
+                            Language: 	Tagalog and English <br>  </small>  
+                      </span>
+                    </v-card-text>
+
+                  </v-img>
+                </v-col> 
+                <v-col xl="4" lg="4" cols="12"> 
+                  <v-row>
+                    <v-col cols="12"> <span>My Socials</span> 
+                      <hr> </v-col> 
+                    <v-col> 
+                         <a style="text-decoration: none;" target="_blank" href="https://www.facebook.com/cymabulay/"><v-icon color="info" size="50" >mdi-facebook</v-icon>  </a> 
+                         <a style="text-decoration: none;" target="_blank" href="https://twitter.com/CyrusMabulay">  <v-icon color="info" size="50">mdi-twitter</v-icon> </a>  
+                         <a style="text-decoration: none;" target="_blank" href="https://www.linkedin.com/in/cyrus-m-635588215/">  <v-icon color="info" size="50">mdi-linkedin</v-icon>  </a>  
+                    </v-col>
+                    <v-col cols="12"> <span>Contact information</span> 
+                      <hr> </v-col> 
+                    <v-col> 
+                          <v-icon color="info" size="20" >mdi-phone</v-icon> Viber: 09070867749 <br>
+                          <v-icon color="info" size="20">mdi-email</v-icon>  Email: Cyrusmabulay@gmail.com <br> 
+                    </v-col>
+                    <v-col cols="12"> <span>Other</span> 
+                      <hr> </v-col> 
+                    <v-col> 
+                         <a style="text-decoration: none;" target="_blank" href="https://github.com/CMABULAY"><v-icon color="dark" size="50" >mdi-github</v-icon> github  </a> 
+                          </v-col>
+                    <v-col cols="12"> <span>Tools</span> 
+                      <hr> </v-col> 
+                    <v-col> 
+                        <a style="text-decoration: none;" target="_blank" href="https://dz4up1.com/1S0o"><v-icon color="dark" size="20" >mdi-tools</v-icon> Photoshop  </a> 
+                          </v-col>
+                          
+                  </v-row>   
+                </v-col>  
+              </v-row> 
+             
+            </v-card>
+          </v-card-text>
+
+        </v-img>
+      </v-main> 
+    </v-app>
+  </div> 
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+     
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: () => ({
+          overlay: true,
+        }),  
+        created() {
+          
+           setTimeout(() => {
+              this.overlay = false
+            }, 3000) 
+        },  
+    })  
+  </script>
+ 
+
+</body>
+
+</html>

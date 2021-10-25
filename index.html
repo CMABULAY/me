@@ -9,76 +9,116 @@
 </head>
 
 <body>
-  <div id="app">
-    <v-app>
-      <v-main style="background-color: rgb(255, 255, 255);">
-        <v-img :aspect-ratio="5/2.5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">
-
-          <br>
-          <v-toolbar height="40" elevation="0">
-            <v-spacer></v-spacer>
-            <v-btn depressed text color="#58d6c3" small style="text-transform: none;" href="/index.html"> Home </v-btn>
-            <v-btn depressed text color="#58d6c3" small style="text-transform: none;" href="/about">About</v-btn>
-            <v-btn depressed text color="#58d6c3" small style="text-transform: none;">Portfolio</v-btn>
-            <v-btn depressed text color="#58d6c3" small style="text-transform: none;">Contact </v-btn>
-          </v-toolbar>
+  <div id="app"> 
+    <v-app> 
+      <v-overlay :value="overlay">
+        <v-progress-circular
+          indeterminate
+          size="64"
+        ></v-progress-circular>
+      </v-overlay>
+ 
+      <v-main  >
+        <v-img eager :aspect-ratio="5/2.5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">  
+          <div id="layout_header"></div>
           <v-card-text>
-            <v-card class="transparent mx-auto" width="700" height="900" flat>
+            <v-card class="transparent mx-auto" width="1100" height="900" flat>
               <v-row>
-                <v-col>
-                  <v-img contain
+                <v-col  class="image_section" xl="4" lg="4" md="4" cols="12">
+                  <v-img contain eager
                     style="  background: #ffffff; border-radius: 12px 20px 200px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
-                    :aspect-ratio="7/5">
+                    :aspect-ratio="2.8/5"> 
+                    <v-icon size="50">mdi-dots-vertical</v-icon>   
                     <v-img contain rounded
                       style="  background: #388f82; border-radius: 15px 20px 220px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
                       :aspect-ratio="4/5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true">
                     </v-img>
+
+                      <br> 
+                        <v-icon size="40">mdi-dots-vertical</v-icon>  
+                      <a style="text-decoration: none;" download href="https://github.com/CMABULAY/me/blob/main/docs/assets/Cyrus.docx?raw=true" target="_blank">
+                        <v-btn style="text-transform: none;" color="info" small text><v-icon size="22">mdi-download</v-icon> Download CV</v-btn>
+                      </a>  
+                      <br>
+                      <v-icon size="40">mdi-dots-vertical</v-icon>  
+                      <a style="text-decoration: none;" download href="https://github.com/CMABULAY/me/blob/main/docs/assets/Cyrus.docx?raw=true" target="_blank">
+                        <v-btn style="text-transform: none;" color="info" small text> cyrusmabulay@gmail.com </v-btn>
+                      </a>   
                   </v-img>
                 </v-col>
-                <v-col xl="6" lg="6" cols="12">
+                <v-col xl="8" lg="8"  md="8"  cols="12">
                   <v-row>
                     <v-col>
                       <v-card-text class="p-4" height="400">
                         <span style="font-size: 30px; font-family: Georgia, serif;">Hi, I'm Cyrus</span><br>
-                        <span> <v-icon>mdi-dots-vertical</v-icon> Software Engineer <v-icon size="13" color="primary">mdi-checkbox-multiple-marked</v-icon></span> 
+                        <span>  Software Engineer <v-icon size="13" color="primary">mdi-checkbox-multiple-marked</v-icon></span><br>
+                        
+                        <small> <v-icon size="15">mdi-map-marker-multiple</v-icon> Santa Ana, Manila, Philippines </small>  
+                      
                       </v-card-text>
                     </v-col> 
                   </v-row>
                   <span>  <v-icon size="23"  > mdi-bio</v-icon></span> 
                   <hr>
                   <v-row>
-                    <v-col>
-                      <v-card-text class="p-4" height="400"> 
-                        <span> I am 100% Filipino, residing here in the Philippines, 
-                          Having 6+ years work expirience in a private insurance corporation, Creates fast, usefull and easy to use in-house/office applications for these productions. 
-                        </span> 
-                      </v-card-text>
-                    </v-col> 
-                  </v-row>
+                    <v-col> 
+                        <span>Residing in the Philippines, 
+                          Having 6+ years work expirience in one of the leading private non-life insurance corporation here in the Philippines. <br><br> 
+                        </span>  
+                    </v-col>  
+                  </v-row> 
+                  <v-row>
+                  <v-col>
+                    <v-btn small  color="green" dark>More About me</v-btn>
+                   </v-col> 
+                   </v-row> 
                 </v-col>
               </v-row>
-              <v-row><v-col> 
-                  <v-icon size="50">mdi-dots-vertical</v-icon>  
-                 <a download="https://github.com/CMABULAY/me/blob/main/docs/assets/Cyrus.docx"><v-btn color="info" small text><v-icon size="22">mdi-download</v-icon> Download CV</v-btn></a> 
-              </v-col></v-row>
              
+              <br><br>
             </v-card>
           </v-card-text>
 
         </v-img>
-      </v-main>
+        <footer> </footer>
+      </v-main> 
     </v-app>
-  </div>
-
-
+  </div> 
+  <style>
+    .image_section  {
+        display: block;
+    } 
+    @media (max-width:768px){
+        .image_section  {
+            display:none;
+        }
+    }
+    </style>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script>
+     
     new Vue({
       el: '#app',
       vuetify: new Vuetify(),
-    })
+      data: () => ({
+          overlay: true,
+        }),  
+        created() {
+          
+           setTimeout(() => {
+              this.overlay = false
+            }, 3000) 
+        },  
+    })  
   </script>
+  <script> 
+    $(function(){
+      $("#layout_header").load("https://github.com/CMABULAY/me/blob/main/layout/nav.html"); 
+    });
+ </script> 
+
 </body>
 
 </html>

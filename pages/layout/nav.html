@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+  <div id="app"> 
+    <v-app>   
+      <v-main  >
+           <v-card-actions class="grey darken-2 p-4"   elevation="0">
+            <v-spacer></v-spacer>
+            <v-btn depressed text color="#58d6c3" small href="/index.html">  Home </v-btn>
+            <v-btn depressed text color="#58d6c3" small href="/pages/contact/index.html">Contact</v-btn>
+            <v-btn depressed text color="#58d6c3" small href="/pages/portfolio/index.html">Portfolio</v-btn> 
+          </v-card-actions> 
+      </v-main> 
+    </v-app>
+  </div>  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script> 
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(), 
+    })  
+  </script> 
+</body> 
+</html>
