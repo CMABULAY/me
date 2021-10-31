@@ -61,7 +61,7 @@
                                 <v-col cols="12" xl="4" lg="4">
                                         <v-img contain rounded
                                             style="  filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
-                                            :aspect-ratio="6/7" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true">
+                                            :aspect-ratio="7/7" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true">
                                         </v-img>   
                                 </v-col>
                                 <v-col cols="12" xl="8" lg="8">
@@ -70,8 +70,10 @@
                                             <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                                             font-size: 60px; line-height: 80%; color: rgb(24, 141, 187);">Hi, I'm CY </span> 
                                             <v-spacer></v-spacer>
-                                            <v-icon color="rgb(24, 141, 187)" size="150">mdi-houzz</v-icon>
+                                            <!-- <v-icon color="rgb(24, 141, 187)" size="150">mdi-houzz</v-icon> -->
                                         </v-card-actions> 
+                                        <br>
+                                        <br> 
                                         <v-alert prominent text color="info"  >
                                             5+ years in a Private Insurance Corporation as a (Programmer / Software engineer), Develop and maintain internal Desktop/Website Applications 
                                             for day by day operation/production, Currently applied and looking for some other opportunities to learn more technology and help other people projects.
@@ -113,19 +115,16 @@
                                                     <span>Twitter</span>
                                                 </v-tooltip>
                                             <v-spacer></v-spacer>
-                                        </v-card-actions>
-
-                                        <v-img contain  
-                                            style="  filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
-                                              src="https://github.com/CMABULAY/me/blob/main/docs/assets/QR_Code.png?raw=true">
-                                        </v-img>   
-                                </v-col>
-
+                                            <v-img contain width="30" height="150"
+                                                    src="https://github.com/CMABULAY/me/blob/main/docs/assets/QR_Code.PNG?raw=true">
+                                            </v-img>   
+                                        </v-card-actions> 
+                                </v-col> 
                             </v-row>   
                      
                     </v-card-text>   
-                    <v-card flat class="px-4 py-4" height="200"></v-card>   
-                    <v-card flat class="px-4 py-4" height="800">
+                    <v-card flat class="px-4 py-4" height="220"></v-card>   
+                    <v-card flat class="px-4 py-4" height="1200">
                         <v-row>
                             <v-col cols="12" xl="4" lg="4">
                                 <v-carousel v-model="model" height="300">
@@ -162,7 +161,99 @@
                                         <span slot="opposite">Tus eu perfecto</span>
                                         <v-card class="elevation-2">
                                         <v-card-title class="text-h5">
-                                            Lorem ipsum
+                                          Employee portal
+                                        </v-card-title>
+                                        <v-card-text>
+                                            Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                                        </v-card-text>
+                                        </v-card>
+                                    </v-timeline-item>
+                                    </v-timeline>
+                            </v-col>
+                        </v-row>  
+                        <v-row>
+                            <v-col cols="12" xl="4" lg="4">
+                                <v-carousel v-model="model" height="300">
+                                    <v-carousel-item
+                                      v-for="(color, i) in colors"
+                                      :key="color"
+                                    >
+                                      <v-sheet
+                                        :color="color"
+                                        height="100%"
+                                        tile
+                                      >
+                                        <v-row
+                                          class="fill-height"
+                                          align="center"
+                                          justify="center"
+                                        >
+                                          <div class="text-h2">
+                                            Slide {{ i + 1 }}
+                                          </div>
+                                        </v-row>
+                                      </v-sheet>
+                                    </v-carousel-item>
+                                  </v-carousel>
+                            </v-col>
+                            <v-col cols="12" xl="8" lg="8"> 
+                                <v-timeline 
+                                    dense
+                                    >
+                                    <v-timeline-item
+                                        v-for="n in 2"
+                                        :key="n"
+                                    >
+                                        <span slot="opposite">Tus eu perfecto</span>
+                                        <v-card class="elevation-2">
+                                        <v-card-title class="text-h5">
+                                            GIS
+                                        </v-card-title>
+                                        <v-card-text>
+                                            Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                                        </v-card-text>
+                                        </v-card>
+                                    </v-timeline-item>
+                                    </v-timeline>
+                            </v-col>
+                        </v-row>  
+                        <v-row>
+                            <v-col cols="12" xl="4" lg="4">
+                                <v-carousel v-model="model" height="300">
+                                    <v-carousel-item
+                                      v-for="(color, i) in colors"
+                                      :key="color"
+                                    >
+                                      <v-sheet
+                                        :color="color"
+                                        height="100%"
+                                        tile
+                                      >
+                                        <v-row
+                                          class="fill-height"
+                                          align="center"
+                                          justify="center"
+                                        >
+                                          <div class="text-h2">
+                                            Slide {{ i + 1 }}
+                                          </div>
+                                        </v-row>
+                                      </v-sheet>
+                                    </v-carousel-item>
+                                  </v-carousel>
+                            </v-col>
+                            <v-col cols="12" xl="8" lg="8"> 
+                                <v-timeline 
+                                    dense
+                                    >
+                                    <v-timeline-item
+                                        v-for="n in 2"
+                                        :key="n"
+                                    >
+                                        <span slot="opposite">Tus eu perfecto</span>
+                                        <v-card class="elevation-2">
+                                        <v-card-title class="text-h5">
+                                         Inventory
                                         </v-card-title>
                                         <v-card-text>
                                             Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
