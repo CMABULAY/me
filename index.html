@@ -2,14 +2,14 @@
 <html>
 
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> 
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@2.0.46/css/materialdesignicons.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 
 <body>
-  <div id="app"> 
+  <div id="app">  
     <v-app> 
       <v-overlay :value="overlay">
         <v-progress-circular
@@ -17,70 +17,121 @@
           size="64"
         ></v-progress-circular>
       </v-overlay>
- 
       <v-main  >
-        <v-img eager :aspect-ratio="5/2.5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">  
-          <div id="layout_header"></div>
-          <v-card-text>
-            <v-card class="transparent mx-auto" width="1100" height="900" flat>
-              <v-row>
-                <v-col  class="image_section" xl="4" lg="4" md="4" cols="12">
-                  <v-img contain eager
-                    style="  background: #ffffff; border-radius: 12px 20px 200px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
-                    :aspect-ratio="2.8/5"> 
-                    <v-icon size="50">mdi-dots-vertical</v-icon>   
-                    <v-img contain rounded
-                      style="  background: #388f82; border-radius: 15px 20px 220px; filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
-                      :aspect-ratio="4/5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true">
-                    </v-img>
+          
+        <v-img eager :aspect-ratio="4.8/2.5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">   
+                <!--nav ---------------------------------------------------------------------------------------------------------  -->
+                <v-navigation-drawer v-model="drawer"
+                  app clipped    
+                  :mini-variant.sync="mini"
+                  dark fixed  :permanent="$vuetify.breakpoint.smAndUp"
+                  src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg" 
+                   
+                >
+                  <v-list>
+                    <v-list-item   href="/index.html" > 
+                      <v-list-item-icon > <v-icon>mdi-home</v-icon> </v-list-item-icon> 
+                      <v-list-item-content >
+                        <v-list-item-title > Home </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item  href="/pages/portfolio/index.html" > 
+                        <v-list-item-icon > <v-icon>mdi-view-list</v-icon> </v-list-item-icon> 
+                        <v-list-item-content >
+                            <v-list-item-title > Portfolio </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item> 
+                  </v-list>
 
-                      <br> 
-                        <v-icon size="40">mdi-dots-vertical</v-icon>  
-                      <a style="text-decoration: none;" download href="https://github.com/CMABULAY/me/blob/main/docs/assets/Cyrus.docx?raw=true" target="_blank">
-                        <v-btn style="text-transform: none;" color="info" small text><v-icon size="22">mdi-download</v-icon> Download CV</v-btn>
-                      </a>  
-                      <br>
-                      <v-icon size="40">mdi-dots-vertical</v-icon>  
-                      <a style="text-decoration: none;" download href="https://github.com/CMABULAY/me/blob/main/docs/assets/Cyrus.docx?raw=true" target="_blank">
-                        <v-btn style="text-transform: none;" color="info" small text> cyrusmabulay@gmail.com </v-btn>
-                      </a>   
-                  </v-img>
-                </v-col>
-                <v-col xl="8" lg="8"  md="8"  cols="12">
-                  <v-row>
-                    <v-col>
-                      <v-card-text class="p-4" height="400">
-                        <span style="font-size: 30px; font-family: Georgia, serif;">Hi, I'm Cyrus</span><br>
-                        <span>  Software Engineer <v-icon size="13" color="primary">mdi-checkbox-multiple-marked</v-icon></span><br>
+                  <template v-slot:append>
+                    <div style="color: white;" class="pa-2 caption">  
+                    </div>
+                  </template>
+                </v-navigation-drawer>  
+                <v-app-bar app color="#ffffff" fixed dense height="56" :clipped-left="true"> 
+                    <v-app-bar-nav-icon color="#cc0033"    @click.stop="mini = !mini"></v-app-bar-nav-icon> 
+                </v-app-bar> 
+                <!--content ---------------------------------------------------------------------------------------------------------  -->
+                <br>
+                    <v-card-text>
+                        <v-card flat> 
+                            <v-row>
+                                <v-col cols="12" xl="4" lg="4">
+                                        <v-img contain rounded
+                                            style="  filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
+                                            :aspect-ratio="9/7" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true">
+                                        </v-img>   
+                                </v-col>
+                                <v-col cols="12" xl="8" lg="8">
+                                    <v-img v-if="hideme" src="https://github.com/CMABULAY/me/blob/main/docs/assets/welcome.gif?raw=true"> 
+                                    </v-img>
+                                </v-col>
+                            </v-row> 
+                        </v-card>
                         
-                        <small> <v-icon size="15">mdi-map-marker-multiple</v-icon> Santa Ana, Manila, Philippines </small>  
-                      
-                      </v-card-text>
-                    </v-col> 
-                  </v-row>
-                  <span>  <v-icon size="23"  > mdi-bio</v-icon></span> 
-                  <hr>
-                  <v-row>
-                    <v-col> 
-                        <span>Residing in the Philippines, 
-                          Having 6+ years work expirience in one of the leading private non-life insurance corporation here in the Philippines. <br><br> 
-                        </span>  
-                    </v-col>  
-                  </v-row> 
-                  <v-row>
-                  <v-col>
-                    <v-btn small  color="green" dark>More About me</v-btn>
-                   </v-col> 
-                   </v-row> 
-                </v-col>
-              </v-row>
-             
-              <br><br>
-            </v-card>
-          </v-card-text>
+                    </v-card-text>   
 
-        </v-img>
-        <footer> </footer>
+
+        </v-img> 
+                <!--footer ---------------------------------------------------------------------------------------------------------  -->
+        <footer class="white p-0 m-0"> 
+            <v-card-actions> 
+                <v-spacer></v-spacer>   
+                    <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-btn small  v-bind="attrs" v-on="on" text><v-icon color="blue">mdi-facebook</v-icon></v-btn> 
+                        </template>
+                        <span>Facebook</span>
+                    </v-tooltip>
+                    <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                           <a style="text-decoration: none;" href="https://twitter.com/CyrusMabulay" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-twitter</v-icon></v-btn> </a> 
+                        </template>
+                        <span>Twitter</span>
+                    </v-tooltip>
+                    <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                           <a style="text-decoration: none;" href="https://join.skype.com/invite/tG0a9XprZgeQ" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-skype</v-icon></v-btn> </a> 
+                        </template>
+                        <span>Skype</span>
+                    </v-tooltip>
+                    <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-btn small v-bind="attrs" v-on="on" text @click="dialogOpen(2)" ><v-icon color="blue">mdi-telegram</v-icon></v-btn> 
+                        </template>
+                        <span>Telegram</span>
+                    </v-tooltip> 
+                    <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                           <a style="text-decoration: none;" href="https://github.com/CMABULAY" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-github-box</v-icon></v-btn> </a> 
+                        </template>
+                        <span>Github</span>
+                    </v-tooltip>
+                <v-spacer></v-spacer>
+            </v-card-actions>
+
+
+            <v-dialog
+                transition="dialog-bottom-transition"
+                max-width="400"
+                v-model="dialog"
+            > 
+              <v-card>
+                <v-toolbar
+                  color="primary"
+                  dark
+                > {{ (content == 2? 'Telegram': '' ) }}
+                <v-spacer></v-spacer>
+                <v-icon @click="dialog = false">mdi-close</v-icon>
+                </v-toolbar>   
+                  <div v-if="content == 2" class="caption pa-12">
+                    <v-row><v-col xl="4"> Search : </v-col> <v-col>  Cyrus Mabulay </v-col> </v-row>
+                    <v-row><v-col xl="4"> Via Phone: </v-col> <v-col> <a href='https://t.me/cyrusmabulay'>https://t.me/cyrusmabulay</a> </v-col> </v-row>
+                  </div>  
+              </v-card> 
+          </v-dialog>
+
+        </footer>
       </v-main> 
     </v-app>
   </div> 
@@ -94,30 +145,46 @@
         }
     }
     </style>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script  src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script   src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>  
+  
   <script>
-     
-    new Vue({
-      el: '#app',
-      vuetify: new Vuetify(),
-      data: () => ({
-          overlay: true,
-        }),  
-        created() {
-          
-           setTimeout(() => {
-              this.overlay = false
-            }, 3000) 
-        },  
-    })  
+        new Vue({
+            el: '#app', 
+            vuetify: new Vuetify(),
+            data: () => ({
+                overlay: true,
+                dialog: false,
+                drawer: false,      
+                mini: true,
+                content: '',
+                hideme: true,
+            }),  
+            created() { 
+                setTimeout(() => {
+                    this.overlay = false
+                }, 3000) 
+                setTimeout(() => {
+                    this.hideme = false
+                }, 6000) 
+            },  
+            methods: {
+                dialogOpen(type){
+                    switch (type) { 
+                        case 2: 
+                            this.content = '2'
+                        break; 
+                        default:
+                            break;
+                    }
+                            this.dialog = true
+                }
+            }
+        })  
+
   </script>
-  <script> 
-    $(function(){
-      $("#layout_header").load("https://github.com/CMABULAY/me/blob/main/layout/nav.html"); 
-    });
- </script> 
+  
+  
 
 </body>
 
