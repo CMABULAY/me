@@ -19,78 +19,111 @@
       </v-overlay>
       <v-main  >
           
-        <v-img   eager style="height: 800px; margin-bottom: 50px;"  :aspect-ratio="51/1.5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/3.jpg?raw=true">   
+        <v-img eager :aspect-ratio="4.8/2.5" src="https://github.com/CMABULAY/me/blob/main/docs/assets/2.jpg?raw=true">   
                 <!--nav ---------------------------------------------------------------------------------------------------------  -->
-                
-                <v-app-bar color="black"  flat app  fixed dense height="56" :clipped-left="true"> 
-                    <!-- <v-img max-width="50" class="mx-4"  style="cursor:pointer" 
-                    src="https://github.com/CMABULAY/me/blob/main/docs/assets/3.jpg?raw=true"  href="/index.html"> 
-                    </v-img> -->
-                    <h6 class="caption white--text" >@cyrusmabulay</h6>
+                <v-navigation-drawer v-model="drawer"
+                  app clipped    
+                  :mini-variant.sync="mini"
+                  dark fixed  :permanent="$vuetify.breakpoint.smAndUp"
+                  src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg" 
+                   
+                >
+                  <v-list>
+                    <v-list-item   href="/index.html" > 
+                      <v-list-item-icon > <v-icon>mdi-home</v-icon> </v-list-item-icon> 
+                      <v-list-item-content >
+                        <v-list-item-title > Home </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item  href="/pages/portfolio/index.html" > 
+                        <v-list-item-icon > <v-icon>mdi-view-list</v-icon> </v-list-item-icon> 
+                        <v-list-item-content >
+                            <v-list-item-title > Portfolio </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item> 
+                  </v-list>
+
+                  <template v-slot:append>
+                    <div style="color: white;" class="pa-2 caption">  
+                    </div>
+                  </template>
+                </v-navigation-drawer>  
+                <v-app-bar app color="#ffffff" fixed dense height="56" :clipped-left="true"> 
+                    <v-app-bar-nav-icon color="#cc0033"    @click.stop="mini = !mini"></v-app-bar-nav-icon> 
                         <v-spacer></v-spacer>
                         <v-btn text > <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-                            font-size: 20px; line-height: 80%; color: white;  text-transform: none;">Email me at cyrusmabulay@gmail.com</span> </v-btn>   
-                  </v-app-bar> 
+                            font-size: 20px; line-height: 80%; color: orange; text-transform: none;">Let us build our goal</span> </v-btn>   
+                </v-app-bar> 
                 <!--content ---------------------------------------------------------------------------------------------------------  -->
-           
-                <v-card flat class="transparent py-0" height="400">  
-                    <v-row> 
-                        <v-spacer></v-spacer>
-                        <v-col cols="12" xl="8" lg="8"> 
-                                
-                                <br> 
-                                <v-card-actions>   
-                                    <a style="text-decoration: none;" download href="https://github.com/CMABULAY/me/blob/main/docs/assets/Cyrus.docx?raw=true" target="_blank">
-                                        <v-btn style="text-transform: none;" color="info"    ><v-icon size="22">mdi-download</v-icon> Download CV</v-btn>
-                                    </a>  
-                                        <v-tooltip top>
-                                            <template v-slot:activator="{ on, attrs }">
-                                                <a style="text-decoration: none;" href="https://join.skype.com/invite/tG0a9XprZgeQ" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-skype</v-icon></v-btn> </a> 
-                                            </template>
-                                            <span>Skype</span>
-                                        </v-tooltip>
-                                        <v-tooltip top>
-                                            <template v-slot:activator="{ on, attrs }">
-                                                <v-btn small v-bind="attrs" v-on="on" text @click="dialogOpen(2)" ><v-icon color="blue">mdi-telegram</v-icon></v-btn> 
-                                            </template>
-                                            <span>Telegram</span>
-                                        </v-tooltip> 
-                                        <v-tooltip top>
-                                            <template v-slot:activator="{ on, attrs }">
-                                                <a style="text-decoration: none;" href="https://github.com/CMABULAY" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-github-box</v-icon></v-btn> </a> 
-                                            </template>
-                                            <span>Github</span>
-                                        </v-tooltip>
-                                        <v-tooltip top>
-                                            <template v-slot:activator="{ on, attrs }">
-                                                <v-btn small  v-bind="attrs" v-on="on" text><v-icon color="blue">mdi-facebook</v-icon></v-btn> 
-                                            </template>
-                                            <span>Facebook</span>
-                                        </v-tooltip>
-                                        <v-tooltip top>
-                                            <template v-slot:activator="{ on, attrs }">
-                                                <a style="text-decoration: none;" href="https://twitter.com/CyrusMabulay" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-twitter</v-icon></v-btn> </a> 
-                                            </template>
-                                            <span>Twitter</span>
-                                        </v-tooltip>
-                                    <v-spacer></v-spacer>
-                                    <v-img contain width="30" height="150"
-                                            src="https://github.com/CMABULAY/me/blob/main/docs/assets/QR_Code.PNG?raw=true">
-                                    </v-img>   
-                                </v-card-actions> 
-                        </v-col> 
-                    </v-row>    
-                </v-card>   
- 
-                   
-                <v-card-actions>
-                    <v-spacer></v-spacer> 
-                        <v-btn large><v-icon>mdi-github-box</v-icon> Github </v-btn>
-                        <v-btn>123</v-btn>  
-                    <v-spacer></v-spacer>
-                </v-card-actions>
-
-
+                <br>
+                    <v-card-text class="py-0" height="800">  
+                            <v-row>
+                                <v-col cols="12" xl="4" lg="4">
+                                        <v-img contain rounded
+                                            style="  filter: drop-shadow(8px 10px  8px rgb(173, 173, 173)); "
+                                            :aspect-ratio="7/7" src="https://github.com/CMABULAY/me/blob/main/docs/assets/cy.png?raw=true">
+                                        </v-img>   
+                                </v-col>
+                                <v-col cols="12" xl="8" lg="8">
+                                   
+                                        <v-card-actions>
+                                            <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                                            font-size: 60px; line-height: 80%; color: rgb(24, 141, 187);">Hi, I'm CY </span> 
+                                            <v-spacer></v-spacer>
+                                            <!-- <v-icon color="rgb(24, 141, 187)" size="150">mdi-houzz</v-icon> -->
+                                        </v-card-actions> 
+                                        <br>
+                                        <br> 
+                                        <v-alert prominent text color="info"  >
+                                            5+ years in a Private Insurance Corporation as a (Programmer / Software engineer), Develop and maintain internal Desktop/Website Applications 
+                                            for day by day operation/production, Currently applied and looking for some other opportunities to learn more technology and help other people projects.
+                                        </v-alert>
+                                        
+                                        <br> 
+                                        <v-card-actions>   
+                                            <a style="text-decoration: none;" download href="https://github.com/CMABULAY/me/blob/main/docs/assets/Cyrus.docx?raw=true" target="_blank">
+                                                <v-btn style="text-transform: none;" color="info"    ><v-icon size="22">mdi-download</v-icon> Download CV</v-btn>
+                                            </a>  
+                                                <v-tooltip top>
+                                                    <template v-slot:activator="{ on, attrs }">
+                                                       <a style="text-decoration: none;" href="https://join.skype.com/invite/tG0a9XprZgeQ" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-skype</v-icon></v-btn> </a> 
+                                                    </template>
+                                                    <span>Skype</span>
+                                                </v-tooltip>
+                                                <v-tooltip top>
+                                                    <template v-slot:activator="{ on, attrs }">
+                                                        <v-btn small v-bind="attrs" v-on="on" text @click="dialogOpen(2)" ><v-icon color="blue">mdi-telegram</v-icon></v-btn> 
+                                                    </template>
+                                                    <span>Telegram</span>
+                                                </v-tooltip> 
+                                                <v-tooltip top>
+                                                    <template v-slot:activator="{ on, attrs }">
+                                                       <a style="text-decoration: none;" href="https://github.com/CMABULAY" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-github-box</v-icon></v-btn> </a> 
+                                                    </template>
+                                                    <span>Github</span>
+                                                </v-tooltip>
+                                                <v-tooltip top>
+                                                    <template v-slot:activator="{ on, attrs }">
+                                                        <v-btn small  v-bind="attrs" v-on="on" text><v-icon color="blue">mdi-facebook</v-icon></v-btn> 
+                                                    </template>
+                                                    <span>Facebook</span>
+                                                </v-tooltip>
+                                                <v-tooltip top>
+                                                    <template v-slot:activator="{ on, attrs }">
+                                                       <a style="text-decoration: none;" href="https://twitter.com/CyrusMabulay" target="_blank"><v-btn small v-bind="attrs" v-on="on" text  ><v-icon color="blue">mdi-twitter</v-icon></v-btn> </a> 
+                                                    </template>
+                                                    <span>Twitter</span>
+                                                </v-tooltip>
+                                            <v-spacer></v-spacer>
+                                            <v-img contain width="30" height="150"
+                                                    src="https://github.com/CMABULAY/me/blob/main/docs/assets/QR_Code.PNG?raw=true">
+                                            </v-img>   
+                                        </v-card-actions> 
+                                </v-col> 
+                            </v-row>   
+                     
+                    </v-card-text>   
+                    <v-card flat class="px-4 py-4" height="220"></v-card>   
                     <v-card flat class="px-4 py-4" height="1200">
                         <v-row>
                             <v-col cols="12" xl="4" lg="4">
@@ -234,7 +267,8 @@
         </v-img> 
                 <!--footer ---------------------------------------------------------------------------------------------------------  -->
         <footer class="white p-0 m-0"> 
-            
+           
+
             <v-dialog
                 transition="dialog-bottom-transition"
                 max-width="400"
